@@ -44,11 +44,19 @@
     }
     
     /**
+     * Get base path for URLs (from global variable set in template)
+     */
+    function getBasePath() {
+        return window.SITE_BASE_PATH || '';
+    }
+    
+    /**
      * Load search index from JSON file
      */
     async function loadSearchIndex() {
         try {
-            const response = await fetch('/search-index.json');
+            const basePath = getBasePath();
+            const response = await fetch(`${basePath}/search-index.json`);
             if (!response.ok) {
                 throw new Error('Failed to load search index');
             }
@@ -246,10 +254,11 @@
         
         resultsCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''}`;
         
+        const basePath = getBasePath();
         results.forEach(({ exhibitor }) => {
             const li = document.createElement('li');
             const link = document.createElement('a');
-            link.href = `/exhibitors/${slugify(exhibitor.name)}.html`;
+            link.href = `${basePath}/exhibitors/${slugify(exhibitor.name)}.html`;
             
             // Build result HTML
             const resultHTML = `
