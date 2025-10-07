@@ -1,0 +1,44 @@
+{
+  "exhibitors": [
+    {
+      "name": "Acme Corporation",
+      "description": "Leading manufacturer of innovative consumer electronics and smart home devices.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=001",
+      "categories": [
+        "Smart Home",
+        "Consumer Electronics",
+        "iot"
+      ],
+      "scraped_at": "",
+      "searchTerms": "acme corporation leading manufacturer of innovative consumer electronics and smart home devices. smart home consumer electronics iot"
+    },
+    {
+      "name": "GreenTech Solutions",
+      "description": "Sustainable energy products and eco-friendly technology for modern homes.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=003",
+      "categories": [
+        "Sustainability",
+        "Energy",
+        "Smart Home"
+      ],
+      "scraped_at": "",
+      "searchTerms": "greentech solutions sustainable energy products and eco-friendly technology for modern homes. sustainability energy smart home"
+    },
+    {
+      "name": "TechVision Inc",
+      "description": "Pioneers in augmented reality and virtual reality solutions for enterprise and gaming.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=002",
+      "categories": [
+        "Ar/Vr",
+        "Gaming",
+        "Enterprise Solutions"
+      ],
+      "scraped_at": "",
+      "searchTerms": "techvision inc pioneers in augmented reality and virtual reality solutions for enterprise and gaming. ar/vr gaming enterprise solutions"
+    }
+  ],
+  "metadata": {
+    "built_at": "2025-10-07T11:45:56Z",
+    "exhibitor_count": 3
+  }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CES Exhibitors Directory - Browse and search all exhibitors at the Consumer Electronics Show">
+    <title>CES Exhibitors - Table View</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
+<link rel="stylesheet" href="/css/table.css">
+
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="/index.html" class="logo">
+                        <h1>CES Exhibitors</h1>
+                    </a>
+                </div>
+                
+                <div class="navbar-menu">
+                    <a href="/index.html" class="nav-link ">
+                        Home
+                    </a>
+                    <a href="/exhibitors_table.html" class="nav-link ">
+                        Table View
+                    </a>
+                    <a href="/categories.html" class="nav-link ">
+                        Categories
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search exhibitors by name, category, or description..."
+                        autocomplete="off"
+                    >
+                    <button type="button" class="search-button" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Search Results Dropdown -->
+                <div id="search-results" class="search-results" style="display: none;">
+                    <div class="search-results-header">
+                        <span id="results-count">0 results</span>
+                    </div>
+                    <ul id="results-list" class="results-list"></ul>
+                    <div class="search-results-footer">
+                        <small>Press <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            
+            
+<div class="table-controls">
+    <div class="view-controls">
+        <button class="view-toggle active" data-view="table">Table View</button>
+        <button class="view-toggle" data-view="card">Card View</button>
+    </div>
+    
+    <div class="export-controls">
+        <button id="export-filtered" class="btn btn-secondary">Export Filtered (3)</button>
+        <button id="export-all" class="btn btn-secondary">Export All (3)</button>
+    </div>
+</div>
+
+<div class="table-stats">
+    Showing <strong>3</strong> of <strong>3</strong> exhibitors
+</div>
+
+<div class="table-view">
+    <div class="table-container">
+        <table class="exhibitors-table">
+            <thead>
+                <tr>
+                    <th data-column="name" data-sortable="true">
+                        <div class="th-content">
+                            <span class="column-label">Exhibitor Name</span>
+                            <span class="sort-indicator"></span>
+                        </div>
+                        <input type="text" class="filter-input" data-filter-type="text" data-column="name" placeholder="Search names...">
+                    </th>
+                    <th data-column="description" data-sortable="true">
+                        <div class="th-content">
+                            <span class="column-label">Description</span>
+                            <span class="sort-indicator"></span>
+                        </div>
+                        <input type="text" class="filter-input" data-filter-type="text" data-column="description" placeholder="Search descriptions...">
+                    </th>
+                    <th data-column="categories" data-sortable="true">
+                        <div class="th-content">
+                            <span class="column-label">Categories</span>
+                            <span class="sort-indicator"></span>
+                        </div>
+                        <div class="custom-dropdown" data-filter-type="array" data-column="categories" id="categories-filter">
+                            <button type="button" class="dropdown-toggle">
+                                <span class="dropdown-label">All Categories</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" style="display: none;">
+                                <div class="dropdown-search">
+                                    <input type="text" class="search-input" placeholder="Search categories..." />
+                                </div>
+                                <div class="dropdown-options">
+                                    <label class="dropdown-option select-all-option">
+                                        <input type="checkbox" class="select-all-checkbox" checked />
+                                        <span>Select All</span>
+                                    </label>
+                                    <div class="dropdown-option-list">
+                                        <!-- Options will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th data-column="url" data-sortable="false">
+                        <div class="th-content">
+                            <span class="column-label">Website</span>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr data-exhibitor-id="Acme Corporation">
+                    <td class="name-cell">Acme Corporation</td>
+                    <td class="description-cell">Leading manufacturer of innovative consumer electronics and smart home devices.</td>
+                    <td class="categories-cell">
+                        
+                            Smart Home, Consumer Electronics, iot
+                        
+                    </td>
+                    <td class="url-cell">
+                        
+                            <a href="https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=001" target="_blank" rel="noopener">View</a>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-exhibitor-id="GreenTech Solutions">
+                    <td class="name-cell">GreenTech Solutions</td>
+                    <td class="description-cell">Sustainable energy products and eco-friendly technology for modern homes.</td>
+                    <td class="categories-cell">
+                        
+                            Sustainability, Energy, Smart Home
+                        
+                    </td>
+                    <td class="url-cell">
+                        
+                            <a href="https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=003" target="_blank" rel="noopener">View</a>
+                        
+                    </td>
+                </tr>
+                
+                <tr data-exhibitor-id="TechVision Inc">
+                    <td class="name-cell">TechVision Inc</td>
+                    <td class="description-cell">Pioneers in augmented reality and virtual reality solutions for enterprise and gaming.</td>
+                    <td class="categories-cell">
+                        
+                            Ar/Vr, Gaming, Enterprise Solutions
+                        
+                    </td>
+                    <td class="url-cell">
+                        
+                            <a href="https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=002" target="_blank" rel="noopener">View</a>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card-view" style="display: none;">
+    <!-- Card view would go here - reuse existing card layout from index.html -->
+    <p>Card view is available on the main index page.</p>
+</div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>CES Exhibitors Directory - A comprehensive searchable database of all exhibitors at the Consumer Electronics Show.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Statistics</h3>
+                    <p>
+                        <strong>0</strong> exhibitors<br>
+                        <strong>0</strong> categories
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Data</h3>
+                    <p>
+                        Last updated: <time datetime="2025-01-01T00:00:00Z">
+                            2025-01-01
+                        </time>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CES Exhibitors Directory. Data scraped from <a href="https://exhibitors.ces.tech" target="_blank" rel="noopener">exhibitors.ces.tech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    
+<script src="/js/table.js"></script>
+<script src="/js/filters.js"></script>
+<script src="/js/sort.js"></script>
+<script src="/js/csv-export.js"></script>
+
+<script>
+// Initialize table state with exhibitor data
+const exhibitorsData = [{"name": "Acme Corporation", "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=001", "last_seen": "2025-01-15T10:30:00Z", "description": "Leading manufacturer of innovative consumer electronics and smart home devices.", "categories": ["Smart Home", "Consumer Electronics", "iot"], "exhid": "001"}, {"name": "GreenTech Solutions", "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=003", "last_seen": "2025-01-15T11:30:00Z", "description": "Sustainable energy products and eco-friendly technology for modern homes.", "categories": ["Sustainability", "Energy", "Smart Home"], "exhid": "003"}, {"name": "TechVision Inc", "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=002", "last_seen": "2025-01-15T11:00:00Z", "description": "Pioneers in augmented reality and virtual reality solutions for enterprise and gaming.", "categories": ["Ar/Vr", "Gaming", "Enterprise Solutions"], "exhid": "002"}];
+const tableState = initTableState(exhibitorsData);
+
+// Initialize all features
+document.addEventListener('DOMContentLoaded', function() {
+    // Populate category filter options
+    const categoryFilter = document.getElementById('categories-filter');
+    if (categoryFilter) {
+        const uniqueCategories = getUniqueArrayValues(exhibitorsData, 'categories');
+        const optionList = categoryFilter.querySelector('.dropdown-option-list');
+        
+        if (optionList) {
+            uniqueCategories.forEach(category => {
+                const label = document.createElement('label');
+                label.className = 'dropdown-option';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'category-checkbox';
+                checkbox.value = category;
+                checkbox.checked = true; // All selected by default
+                
+                const span = document.createElement('span');
+                span.textContent = category;
+                
+                label.appendChild(checkbox);
+                label.appendChild(span);
+                optionList.appendChild(label);
+            });
+        }
+    }
+    
+    // Initialize handlers
+    attachViewToggleHandlers();
+    
+    initializeFilters(tableState, function(updatedState) {
+        refreshTable(updatedState);
+    });
+    
+    initializeSorting(tableState, function(updatedState) {
+        refreshTable(updatedState);
+    });
+    
+    initializeExport(tableState);
+    
+    // Apply saved view preference
+    const savedView = localStorage.getItem('exhibitorView') || 'table';
+    const viewButton = document.querySelector(`.view-toggle[data-view="${savedView}"]`);
+    if (viewButton) {
+        viewButton.click();
+    }
+});
+</script>
+
+</body>
+</html>
