@@ -103,6 +103,24 @@
     background: #f8f9fa;
 }
 
+/* Booth column styling */
+.exhibitors-table td.booth-col, .exhibitors-table th.booth-col {
+    color: var(--primary-color);
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 120px;
+    overflow-x: auto;
+}
+
+/* Website column styling */
+.exhibitors-table td.website-col, .exhibitors-table th.website-col {
+    color: var(--success-color);
+    font-weight: 500;
+    word-break: break-all;
+    max-width: 220px;
+    overflow-x: auto;
+}
+
 .filter-input {
     width: 100%;
     padding: 6px 8px;

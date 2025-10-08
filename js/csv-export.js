@@ -55,7 +55,8 @@ function generateCSV(exhibitors, columns) {
         { name: 'name', label: 'Exhibitor Name', type: 'text' },
         { name: 'description', label: 'Description', type: 'text' },
         { name: 'categories', label: 'Categories', type: 'array' },
-        { name: 'url', label: 'Website URL', type: 'text' }
+           { name: 'booth', label: 'Booth', type: 'array' },
+           { name: 'website', label: 'Website', type: 'text' }
     ];
     
     const columnsToUse = columns || defaultColumns;
