@@ -55,7 +55,7 @@ function generateCSV(exhibitors, columns) {
         { name: 'name', label: 'Exhibitor Name', type: 'text' },
         { name: 'description', label: 'Description', type: 'text' },
         { name: 'categories', label: 'Categories', type: 'array' },
-           { name: 'booth', label: 'Booth', type: 'array' },
+           { name: 'booths', label: 'Booth', type: 'array' },
            { name: 'website', label: 'Website', type: 'text' }
     ];
     
@@ -91,7 +91,10 @@ function generateCSV(exhibitors, columns) {
  * @param {string} filename - Name of file to download
  */
 function triggerDownload(csvContent, filename) {
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    // Add UTF-8 BOM to ensure proper character encoding in Excel and other programs
+    // The BOM (Byte Order Mark) tells the application that the file is UTF-8 encoded
+    const BOM = '\uFEFF';
+    const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     
     if (navigator.msSaveBlob) {

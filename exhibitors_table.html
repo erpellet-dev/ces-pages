@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Populate booth filter options
     const boothFilter = document.getElementById('booth-filter');
     if (boothFilter) {
-        const uniqueBooths = getUniqueArrayValues(exhibitorsData, 'booth');
+        const uniqueBooths = getUniqueArrayValues(exhibitorsData, 'booths');
         const optionList = boothFilter.querySelector('.dropdown-option-list');
         
         if (optionList) {
