@@ -1,44 +1,77 @@
 {
   "exhibitors": [
     {
-      "name": "Acme Corporation",
-      "description": "Leading manufacturer of innovative consumer electronics and smart home devices.",
-      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=001",
+      "name": ".simstechnology",
+      "description": "A personal safety wearable device that detects and alerts you when someone or something is approaching you from behind.\nOur camera-based detection patented device will give you peace of mind anywhere and anytime whether you're on a walk out alone at night, or just going about your day, the. sims wearable will have your back\n'Live Freely'",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=0014V00003waMPDQA2",
       "categories": [
-        "Smart Home",
-        "Consumer Electronics",
-        "iot"
+        "Accessories",
+        "Artificial Intelligence",
+        "IoT/Sensors",
+        "Lifestyle"
       ],
       "scraped_at": "",
-      "searchTerms": "acme corporation leading manufacturer of innovative consumer electronics and smart home devices. smart home consumer electronics iot"
+      "searchTerms": ".simstechnology a personal safety wearable device that detects and alerts you when someone or something is approaching you from behind.\nour camera-based detection patented device will give you peace of mind anywhere and anytime whether you're on a walk out alone at night, or just going about your day, the. sims wearable will have your back\n'live freely' accessories artificial intelligence iot/sensors lifestyle"
     },
     {
-      "name": "GreenTech Solutions",
-      "description": "Sustainable energy products and eco-friendly technology for modern homes.",
-      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=003",
+      "name": "Alps Alpine North America, Inc.",
+      "description": "We conduct business across three segments: Components, Sensors and Communication, and Modules and Systems. Our products and services tend to the needs of customers in many different sectors, including automotive, consumer electronics, mobile devices and game markets. We also look to break ground and expand our horizons in new applications",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=0013000001KYV02AAH",
       "categories": [
-        "Sustainability",
-        "Energy",
-        "Smart Home"
+        "Audio",
+        "IoT/Sensors",
+        "Smart Communities",
+        "Smart Home & Appliances",
+        "Vehicle Tech & Advanced Mobility"
       ],
       "scraped_at": "",
-      "searchTerms": "greentech solutions sustainable energy products and eco-friendly technology for modern homes. sustainability energy smart home"
+      "searchTerms": "alps alpine north america, inc. we conduct business across three segments: components, sensors and communication, and modules and systems. our products and services tend to the needs of customers in many different sectors, including automotive, consumer electronics, mobile devices and game markets. we also look to break ground and expand our horizons in new applications audio iot/sensors smart communities smart home & appliances vehicle tech & advanced mobility"
     },
     {
-      "name": "TechVision Inc",
-      "description": "Pioneers in augmented reality and virtual reality solutions for enterprise and gaming.",
-      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=002",
+      "name": "dSPACE",
+      "description": "dSPACE is a leading provider of simulation and validation solutions worldwide for developing connected, autonomous, and electrically powered vehicles. Our portfolio ranges from end-to-end solutions for simulation and validation to engineering and consulting services as well as training and support.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=0013A00001eXqrVQAS",
       "categories": [
-        "Ar/Vr",
-        "Gaming",
-        "Enterprise Solutions"
+        "Cloud Computing",
+        "Energy Transition",
+        "Smart Communities",
+        "Space Tech",
+        "Vehicle Tech & Advanced Mobility"
       ],
       "scraped_at": "",
-      "searchTerms": "techvision inc pioneers in augmented reality and virtual reality solutions for enterprise and gaming. ar/vr gaming enterprise solutions"
+      "searchTerms": "dspace dspace is a leading provider of simulation and validation solutions worldwide for developing connected, autonomous, and electrically powered vehicles. our portfolio ranges from end-to-end solutions for simulation and validation to engineering and consulting services as well as training and support. cloud computing energy transition smart communities space tech vehicle tech & advanced mobility"
+    },
+    {
+      "name": "Hidonix",
+      "description": "Among its innovations in AI and robotics, Hidonix develops cutting-edge navigation technologies that connect physical and digital spaces. At CES, we are presenting our proprietary indoor–outdoor navigation system (ION) with advanced asset tracking for real-time visibility, efficiency, and mobility.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=001Pp00000zUolsIAC",
+      "categories": [
+        "Artificial Intelligence",
+        "Construction & Industrial Tech",
+        "Enterprise",
+        "IoT/Sensors",
+        "Robotics"
+      ],
+      "scraped_at": "",
+      "searchTerms": "hidonix among its innovations in ai and robotics, hidonix develops cutting-edge navigation technologies that connect physical and digital spaces. at ces, we are presenting our proprietary indoor–outdoor navigation system (ion) with advanced asset tracking for real-time visibility, efficiency, and mobility. artificial intelligence construction & industrial tech enterprise iot/sensors robotics"
+    },
+    {
+      "name": "Kubota North America",
+      "description": "Kubota is built on 100+ years of developing innovative solutions that support the future of the earth and humanity by contributing products that help the abundant and stable production of food, help supply and restore reliable water, and help create a comfortable living environment through its superior products, technologies and services.",
+      "url": "https://exhibitors.ces.tech/8_0/exhibitor/exhibitor-details.cfm?exhid=0014V000036qnOvQAI",
+      "categories": [
+        "AgTech",
+        "Artificial Intelligence",
+        "IoT/Sensors",
+        "Robotics",
+        "Vehicle Tech & Advanced Mobility"
+      ],
+      "scraped_at": "",
+      "searchTerms": "kubota north america kubota is built on 100+ years of developing innovative solutions that support the future of the earth and humanity by contributing products that help the abundant and stable production of food, help supply and restore reliable water, and help create a comfortable living environment through its superior products, technologies and services. agtech artificial intelligence iot/sensors robotics vehicle tech & advanced mobility"
     }
   ],
   "metadata": {
-    "built_at": "2025-10-09T11:20:47Z",
-    "exhibitor_count": 3
+    "built_at": "2025-10-09T15:27:01Z",
+    "exhibitor_count": 5
   }
 }
