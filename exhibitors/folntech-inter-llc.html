@@ -6,7 +6,10 @@
     <meta name="description" content="Folntech Inter LLC - CES Exhibitor">
     <title>Folntech Inter LLC - CES Exhibitor</title>
     
-    <!-- Styles -->
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="/ces-pages/css/styles.css">
     
     <!-- Base path for JavaScript -->
@@ -16,54 +19,64 @@
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header class="site-header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="navbar-brand">
-                    <a href="/ces-pages/index.html" class="logo">
-                        <h1>CES Exhibitors</h1>
-                    </a>
-                </div>
-                
-                <div class="navbar-menu">
-                    <a href="/ces-pages/index.html" class="nav-link ">
-                        Home
-                    </a>
-                    <a href="/ces-pages/exhibitors_table.html" class="nav-link ">
-                        Table View
-                    </a>
-                    <a href="/ces-pages/categories.html" class="nav-link ">
-                        Categories
-                    </a>
+    <header class="hero is-primary is-bold">
+        <div class="hero-head">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="/ces-pages/index.html" class="navbar-item">
+                            <strong class="is-size-4">CES Exhibitors</strong>
+                        </a>
+                    </div>
+                    
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="/ces-pages/index.html" class="navbar-item ">
+                                Home
+                            </a>
+                            <a href="/ces-pages/exhibitors_table.html" class="navbar-item ">
+                                Table View
+                            </a>
+                            <a href="/ces-pages/categories.html" class="navbar-item ">
+                                Categories
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </nav>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <div class="search-box">
-                    <input 
-                        type="search" 
-                        id="search-input" 
-                        class="search-input" 
-                        placeholder="Search exhibitors by name, category, or description..."
-                        autocomplete="off"
-                    >
-                    <button type="button" class="search-button" aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                    </button>
-                </div>
-                
-                <!-- Search Results Dropdown -->
-                <div id="search-results" class="search-results" style="display: none;">
-                    <div class="search-results-header">
-                        <span id="results-count">0 results</span>
+        </div>
+        
+        <div class="hero-body">
+            <div class="container">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="field has-addons">
+                        <div class="control is-expanded has-icons-left">
+                            <input 
+                                type="search" 
+                                id="search-input" 
+                                class="input is-large search-input" 
+                                placeholder="Search exhibitors by name, category, or description..."
+                                autocomplete="off"
+                            >
+                            <span class="icon is-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
-                    <ul id="results-list" class="results-list"></ul>
-                    <div class="search-results-footer">
-                        <small>Press <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select</small>
+                    
+                    <!-- Search Results Dropdown -->
+                    <div id="search-results" class="box search-results" style="display: none;">
+                        <div class="search-results-header mb-2">
+                            <span id="results-count" class="tag is-info">0 results</span>
+                        </div>
+                        <ul id="results-list" class="results-list"></ul>
+                        <div class="search-results-footer mt-2">
+                            <p class="is-size-7 has-text-grey">Press <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,7 +84,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="section">
         <div class="container">
             
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -184,33 +197,39 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="footer has-background-light">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About</h3>
-                    <p>CES Exhibitors Directory - A comprehensive searchable database of all exhibitors at the Consumer Electronics Show.</p>
+            <div class="columns">
+                <div class="column is-4">
+                    <h3 class="title is-5">About</h3>
+                    <p class="content">CES Exhibitors Directory - A comprehensive searchable database of all exhibitors at the Consumer Electronics Show.</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Statistics</h3>
-                    <p>
-                        <strong>0</strong> exhibitors<br>
-                        <strong>0</strong> categories
-                    </p>
+                <div class="column is-4">
+                    <h3 class="title is-5">Statistics</h3>
+                    <div class="content">
+                        <p>
+                            <strong>0</strong> exhibitors<br>
+                            <strong>0</strong> categories
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Data</h3>
-                    <p>
-                        Last updated: <time datetime="2025-01-01T00:00:00Z">
-                            2025-01-01
-                        </time>
-                    </p>
+                <div class="column is-4">
+                    <h3 class="title is-5">Data</h3>
+                    <div class="content">
+                        <p>
+                            Last updated: <time datetime="2025-01-01T00:00:00Z">
+                                2025-01-01
+                            </time>
+                        </p>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <hr>
+            
+            <div class="content has-text-centered">
                 <p>&copy; 2025 CES Exhibitors Directory. Data scraped from <a href="https://exhibitors.ces.tech" target="_blank" rel="noopener">exhibitors.ces.tech</a></p>
             </div>
         </div>
