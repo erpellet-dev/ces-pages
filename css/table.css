@@ -1,5 +1,11 @@
 /* Table View Styles */
 
+/* Override container max-width for table view to use full browser width */
+body:has(.table-view) .container {
+    max-width: none;
+    padding: 0 2rem;
+}
+
 .table-controls {
     display: flex;
     justify-content: space-between;
@@ -50,12 +56,14 @@
     overflow-x: auto;
     border: 1px solid #ddd;
     border-radius: 4px;
+    width: 100%;
 }
 
 .exhibitors-table {
     width: 100%;
     border-collapse: collapse;
     background: white;
+    table-layout: fixed;
 }
 
 .exhibitors-table th {
@@ -66,6 +74,28 @@
     border-bottom: 2px solid #ddd;
     position: relative;
     vertical-align: top;
+}
+
+/* Column resize handle */
+.exhibitors-table th::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+    background: transparent;
+    transition: background 0.2s;
+}
+
+.exhibitors-table th:hover::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.exhibitors-table th.resizing::after {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .exhibitors-table th[data-sortable="true"] {
@@ -97,28 +127,50 @@
 .exhibitors-table td {
     padding: 12px;
     border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .exhibitors-table tbody tr:hover {
-    background: #f8f9fa;
+    background: #e9ecef;
 }
 
 /* Booth column styling */
 .exhibitors-table td.booth-col, .exhibitors-table th.booth-col {
-    color: var(--primary-color);
     font-weight: 500;
     white-space: nowrap;
-    max-width: 120px;
-    overflow-x: auto;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.exhibitors-table td.booth-cell {
+    color: #0056b3;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Website column styling */
 .exhibitors-table td.website-col, .exhibitors-table th.website-col {
-    color: var(--success-color);
     font-weight: 500;
     word-break: break-all;
-    max-width: 220px;
-    overflow-x: auto;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.exhibitors-table td.website-cell a {
+    color: #198754;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.exhibitors-table td.website-cell a:hover {
+    text-decoration: underline;
+    color: #146c43;
 }
 
 .filter-input {
@@ -272,16 +324,21 @@
 
 .name-cell {
     font-weight: 500;
-    min-width: 200px;
+    width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .description-cell {
-    max-width: 400px;
-    min-width: 250px;
+    width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .categories-cell {
-    min-width: 200px;
+    width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .url-cell {

@@ -128,3 +128,50 @@ function refreshTable(tableState) {
     }
     updateStats(tableState.totalCount, tableState.filteredCount);
 }
+
+/**
+ * Initialize column resizing functionality
+ */
+function initializeColumnResizing() {
+    const table = document.querySelector('.exhibitors-table');
+    if (!table) return;
+    
+    const headers = table.querySelectorAll('th');
+    let isResizing = false;
+    let currentHeader = null;
+    let startX = 0;
+    let startWidth = 0;
+    
+    headers.forEach(header => {
+        header.addEventListener('mousedown', function(e) {
+            // Only trigger resize if clicking near the right edge (within 10px)
+            const rect = this.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            
+            if (rect.width - offsetX <= 10) {
+                isResizing = true;
+                currentHeader = this;
+                startX = e.clientX;
+                startWidth = rect.width;
+                currentHeader.classList.add('resizing');
+                e.preventDefault();
+            }
+        });
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+        if (!isResizing || !currentHeader) return;
+        
+        const diff = e.clientX - startX;
+        const newWidth = Math.max(50, startWidth + diff);
+        currentHeader.style.width = newWidth + 'px';
+    });
+    
+    document.addEventListener('mouseup', function() {
+        if (isResizing && currentHeader) {
+            currentHeader.classList.remove('resizing');
+        }
+        isResizing = false;
+        currentHeader = null;
+    });
+}

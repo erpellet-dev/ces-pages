@@ -42694,6 +42694,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initializeExport(tableState);
     
+    // Initialize column resizing
+    initializeColumnResizing();
+    
     // Apply saved view preference
     const savedView = localStorage.getItem('exhibitorView') || 'table';
     const viewButton = document.querySelector(`.view-toggle[data-view="${savedView}"]`);
