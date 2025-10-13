@@ -9,11 +9,61 @@
     <!-- Bulma CSS Framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="/ces-pages/css/styles.css">
-    
     <!-- Base path for JavaScript -->
     <script>window.SITE_BASE_PATH = '/ces-pages';</script>
+    
+    <style>
+    /* Minimal inline styles for functionality that Bulma doesn't provide */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Make hero header sticky */
+    .hero.is-primary {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    /* Search results dropdown positioning */
+    .search-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 0.5rem;
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+    
+    /* Search results list styling */
+    .menu-list a {
+        padding: 1rem;
+        border-radius: 0;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    .menu-list li:last-child a {
+        border-bottom: none;
+    }
+    
+    /* Smooth transitions for cards */
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    }
+    </style>
     
     
 </head>
@@ -70,12 +120,12 @@
                     
                     <!-- Search Results Dropdown -->
                     <div id="search-results" class="box search-results" style="display: none;">
-                        <div class="search-results-header mb-2">
+                        <div class="mb-2">
                             <span id="results-count" class="tag is-info">0 results</span>
                         </div>
-                        <ul id="results-list" class="results-list"></ul>
-                        <div class="search-results-footer mt-2">
-                            <p class="is-size-7 has-text-grey">Press <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select</p>
+                        <ul id="results-list" class="menu-list"></ul>
+                        <div class="mt-2 has-text-centered">
+                            <p class="is-size-7 has-text-grey">Press <kbd class="tag is-light is-small">↑</kbd> <kbd class="tag is-light is-small">↓</kbd> to navigate, <kbd class="tag is-light is-small">Enter</kbd> to select</p>
                         </div>
                     </div>
                 </div>

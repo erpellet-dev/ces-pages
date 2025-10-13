@@ -260,16 +260,16 @@
             const link = document.createElement('a');
             link.href = `${basePath}/exhibitors/${slugify(exhibitor.name)}.html`;
             
-            // Build result HTML
+            // Build result HTML using Bulma classes
             const resultHTML = `
-                <div class="result-name">${exhibitor.name}</div>
-                ${exhibitor.description ? `<div class="result-description">${truncate(exhibitor.description, 100)}</div>` : ''}
+                <div class="has-text-weight-semibold mb-1">${exhibitor.name}</div>
+                ${exhibitor.description ? `<div class="is-size-7 has-text-grey mb-2">${truncate(exhibitor.description, 100)}</div>` : ''}
                 ${exhibitor.categories && exhibitor.categories.length > 0 ? `
-                    <div class="result-categories">
+                    <div class="tags">
                         ${exhibitor.categories.slice(0, 3).map(cat => 
-                            `<span class="result-category">${cat}</span>`
+                            `<span class="tag is-info is-light is-small">${cat}</span>`
                         ).join('')}
-                        ${exhibitor.categories.length > 3 ? `<span class="result-category">+${exhibitor.categories.length - 3} more</span>` : ''}
+                        ${exhibitor.categories.length > 3 ? `<span class="tag is-light is-small">+${exhibitor.categories.length - 3} more</span>` : ''}
                     </div>
                 ` : ''}
             `;
